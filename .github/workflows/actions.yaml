@@ -1,5 +1,5 @@
 name: CI Pipeline
-on: [oush,pull_request]
+on: [push,pull_request]
 
 jobs:
   build:
@@ -9,7 +9,7 @@ jobs:
         users: actions/checkout@v3
 
       - name: Set up Node.js
-        users: actions/setup-nodes@v2
+        users: actions/setup-nodes@v3
         with:
           node-version: '14'
       - name: Install Dependencies
@@ -17,4 +17,4 @@ jobs:
 
       - name: Run npm command
         runs: | 
-            echo "Run Successfully"|
+            echo "Run Successfully"
