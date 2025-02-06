@@ -1,0 +1,17 @@
+name:CI Pipeline
+on:[oush,pull_request]
+
+jobs:
+ build:
+   runs-on: ubunto-latest
+   steps:
+    -name: Checkout Code
+     users: actions/checkout@v3
+
+     -name: Set up Node.js
+      users: actions/setup-nodes@v2
+      with:
+        node-version: '14'
+    
+     -name: Run npm command
+      runs:  echo "Run Successfully"|
